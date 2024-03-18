@@ -7,7 +7,7 @@
 
 ISPAMMM-Lab, Sapienza University of Rome 
 
-<img src="assets/network.png" width="800px"/>
+<img src="assets/network.jpg" width="800px"/>
 
 ### Update
 - **2024.03.18**: Repo is released.
@@ -15,9 +15,7 @@ ISPAMMM-Lab, Sapienza University of Rome
 
 ### Demo
 
-[<img src="assets/imgsli_1.jpg" height="223px"/>](https://imgsli.com/MTc2MTI2) [<img src="assets/imgsli_2.jpg" height="223px"/>](https://imgsli.com/MTc2MTE2) [<img src="assets/imgsli_3.jpg" height="223px"/>](https://imgsli.com/MTc2MTIw)
-[<img src="assets/imgsli_8.jpg" height="223px"/>](https://imgsli.com/MTc2MjUy) [<img src="assets/imgsli_4.jpg" height="223px"/>](https://imgsli.com/MTc2MTMy) [<img src="assets/imgsli_5.jpg" height="223px"/>](https://imgsli.com/MTc2MTMz)
-[<img src="assets/imgsli_9.jpg" height="214px"/>](https://imgsli.com/MTc2MjQ5) [<img src="assets/imgsli_6.jpg" height="214px"/>](https://imgsli.com/MTc2MTM0) [<img src="assets/imgsli_7.jpg" height="214px"/>](https://imgsli.com/MTc2MTM2) [<img src="assets/imgsli_10.jpg" height="214px"/>](https://imgsli.com/MTc2MjU0)
+[<img src="assets/zoomed_black_page-0001.jpg" />]() 
 
 For more evaluation, please refer to our [paper]() for details.
 
