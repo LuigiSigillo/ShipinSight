@@ -1,4 +1,10 @@
 ## Ship in sight
+In recent years, remarkable advancements have been achieved in the field of image generation, primarily driven by the escalating demand for high-quality outcomes across various image generation subtasks, such as inpainting, denoising, and super resolution. A major effort is devoted to exploring the application of super-resolution techniques to enhance the quality of low-resolution images. In this context, our method explores in depth the problem of ship image super resolution, which is crucial for coastal and port surveillance. 
+
+We investigate the opportunity given by the growing interest in text-to-image diffusion models, taking advantage of the prior knowledge that such foundation models have already learned. In particular, we present a diffusion-model-based architecture that leverages text conditioning during training while being class-aware, to best preserve the crucial details of the ships during the generation of the super-resoluted image. Since the specificity of this task and the scarcity availability of off-the-shelf data, we also introduce a large labeled ship dataset scraped from online ship images, mostly from [ShipSpotting](https://www.shipspotting.com/) website. 
+
+Our method achieves more robust results than other deep learning models previously employed for super resolution, as proven by the multiple experiments performed. Moreover, we investigate how this model can benefit downstream tasks, such as classification and object detection, thus emphasizing practical implementation in a real-world scenario. Experimental results show flexibility, reliability, and impressive performance of the proposed framework over state-of-the-art methods for different tasks.
+
 
 [Paper](https://arxiv.org/abs/2403.18370) | [Project Page]() | [Video]() | [WebUI]() |
 
@@ -63,12 +69,13 @@ python main.py --train --base configs/shipinsight/v2-finetune_text_T_512.yaml --
 
 #### Test directly
 
-Download the Diffusion and autoencoder pretrained models from [[HuggingFace]() | [Google Drive]() | [OneDrive]() | [OpenXLab]()].
+Download the Diffusion and autoencoder pretrained models from [Google Drive]().
 
 - Test on 128 512: You need at least 10G GPU memory to run this script (batchsize 2 by default)
 ```
 python scripts/sr_val_ddpm_text_T_vqganfin_old.py --config configs/shipinsight/v2-finetune_text_T_512.yaml --ckpt CKPT_PATH --vqgan_ckpt VQGANCKPT_PATH --init-img INPUT_PATH --outdir OUT_DIR --ddpm_steps 200 --dec_w 0.5 --colorfix_type adain
 ```
+
 <!-- - Test on arbitrary size w/o chop for autoencoder (for results beyond 512): The memory cost depends on your image size, but is usually above 10G.
 ```
 python scripts/sr_val_ddpm_text_T_vqganfin_oldcanvas.py --config configs/shipinsight/v2-finetune_text_T_512.yaml --ckpt CKPT_PATH --vqgan_ckpt VQGANCKPT_PATH --init-img INPUT_PATH --outdir OUT_DIR --ddpm_steps 200 --dec_w 0.5 --colorfix_type adain
@@ -81,7 +88,20 @@ python scripts/sr_val_ddpm_text_T_vqganfin_oldcanvas_tile.py --config configs/sh
 ``` -->
 
 <!-- - For test on 768 model, you need to set ```--config configs/shipinsight/v2-finetune_text_T_768v.yaml```, ```--input_size 768``` and ```--ckpt```. You can also adjust ```--tile_overlap```, ```--vqgantile_size``` and ```--vqgantile_stride``` accordingly. We did not finetune CFW. -->
- -->
+
+### Dataset
+
+To construct such a dataset, a straightforward approach was scraping images from the web. The main source for our dataset is ShipSpotting, which serves as a repository for useruploaded images, hosting a vast collection of ship images, amounting to approximately 3 million. Furthermore, for each
+image, valuable supplementary information is available, such as the type of the ship, and present and past names.
+Next, we made sure that as many images as possible were collected in our dataset, since in deep learning, the quantity
+of training data directly influences the quality of results.
+
+A larger volume of data enables models to generalize more effectively. Thus we scrape all the images and as a result,
+the dataset comprises a total of 1.517.702 samples. We exclude many classes of ships from our final analysis and concentrate on the more common and valuable for a real scenario use case. The total number of different classes is 20 and the ship categories included are Bulkers, Containerships, Cruise ships, Dredgers, Fire Fighting Vessels, Floating Sheerlegs, General Cargo, Inland, Livestock Carriers, Passenger Vessels, Patrol Forces, Reefers, Ro-ro, Supply ships, Tankers, Training ships, Tugs, Vehicle Carriers, Wood Chip Carriers. The total amount of samples after this class selection is 507.918.
+
+Download the Dataset from [Google Drive]().
+
+
 
 ### Citation
 If our work is useful for your research, please consider citing:
