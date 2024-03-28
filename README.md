@@ -1,15 +1,17 @@
 ## Ship in sight
 
-[Paper](https://arxiv.org/abs/) | [Project Page]() | [Video]() | [WebUI]() |
+[Paper](https://arxiv.org/abs/2403.18370) | [Project Page]() | [Video]() | [WebUI]() |
 
 
-[Luigi Sigillo](https://luigisigillo.github.io/), [Riccardo Fosco Gramaccioni](), [Alessandro Nicolosi](), [Danilo Comminiello]()
+[Luigi Sigillo](https://luigisigillo.github.io/), [Riccardo Fosco Gramaccioni](https://scholar.google.it/citations?user=3nBFVm4AAAAJ&hl=it&oi=ao), [Alessandro Nicolosi](), [Danilo Comminiello](https://danilocomminiello.site.uniroma1.it/home)
 
-ISPAMMM-Lab, Sapienza University of Rome 
+[ISPAMM Lab](https://ispamm.it/), Sapienza University of Rome 
 
 <img src="assets/network.jpg" width="800px"/>
 
 ### Update
+- **2024.?.?**: Dataset is released.
+- **2024.?.?**: Checkpoints are released.
 - **2024.03.18**: Repo is released.
 
 
@@ -17,7 +19,7 @@ ISPAMMM-Lab, Sapienza University of Rome
 
 [<img src="assets/zoomed_black_page-0001.jpg" />]() 
 
-For more evaluation, please refer to our [paper]() for details.
+For more evaluation, please refer to our [paper](https://arxiv.org/abs/2403.18370) for details.
 
 ### Dependencies and Installation
 - Pytorch == 1.12.1
@@ -62,43 +64,36 @@ python main.py --train --base configs/shipinsight/v2-finetune_text_T_512.yaml --
 #### Test directly
 
 Download the Diffusion and autoencoder pretrained models from [[HuggingFace]() | [Google Drive]() | [OneDrive]() | [OpenXLab]()].
-We use the same color correction scheme introduced in paper by default.
-You may change ```--colorfix_type wavelet``` for better color correction.
-You may also disable color correction by ```--colorfix_type nofix```
 
 - Test on 128 512: You need at least 10G GPU memory to run this script (batchsize 2 by default)
 ```
 python scripts/sr_val_ddpm_text_T_vqganfin_old.py --config configs/shipinsight/v2-finetune_text_T_512.yaml --ckpt CKPT_PATH --vqgan_ckpt VQGANCKPT_PATH --init-img INPUT_PATH --outdir OUT_DIR --ddpm_steps 200 --dec_w 0.5 --colorfix_type adain
 ```
-- Test on arbitrary size w/o chop for autoencoder (for results beyond 512): The memory cost depends on your image size, but is usually above 10G.
+<!-- - Test on arbitrary size w/o chop for autoencoder (for results beyond 512): The memory cost depends on your image size, but is usually above 10G.
 ```
 python scripts/sr_val_ddpm_text_T_vqganfin_oldcanvas.py --config configs/shipinsight/v2-finetune_text_T_512.yaml --ckpt CKPT_PATH --vqgan_ckpt VQGANCKPT_PATH --init-img INPUT_PATH --outdir OUT_DIR --ddpm_steps 200 --dec_w 0.5 --colorfix_type adain
-```
+``` -->
 
-- Test on arbitrary size w/ chop for autoencoder: Current default setting needs at least 18G to run, you may reduce the autoencoder tile size by setting ```--vqgantile_size``` and ```--vqgantile_stride```.
+<!-- - Test on arbitrary size w/ chop for autoencoder: Current default setting needs at least 18G to run, you may reduce the autoencoder tile size by setting ```--vqgantile_size``` and ```--vqgantile_stride```.
 Note the min tile size is 512 and the stride should be smaller than the tile size. A smaller size may introduce more border artifacts.
 ```
 python scripts/sr_val_ddpm_text_T_vqganfin_oldcanvas_tile.py --config configs/shipinsight/v2-finetune_text_T_512.yaml --ckpt CKPT_PATH --vqgan_ckpt VQGANCKPT_PATH --init-img INPUT_PATH --outdir OUT_DIR --ddpm_steps 200 --dec_w 0.5 --colorfix_type adain
-```
+``` -->
 
-- For test on 768 model, you need to set ```--config configs/shipinsight/v2-finetune_text_T_768v.yaml```, ```--input_size 768``` and ```--ckpt```. You can also adjust ```--tile_overlap```, ```--vqgantile_size``` and ```--vqgantile_stride``` accordingly. We did not finetune CFW. -->
-
+<!-- - For test on 768 model, you need to set ```--config configs/shipinsight/v2-finetune_text_T_768v.yaml```, ```--input_size 768``` and ```--ckpt```. You can also adjust ```--tile_overlap```, ```--vqgantile_size``` and ```--vqgantile_stride``` accordingly. We did not finetune CFW. -->
+ -->
 
 ### Citation
 If our work is useful for your research, please consider citing:
 
 ```
-@INPROCEEDINGS{
-    Sigi2406:Ship,
-    AUTHOR="Luigi Sigillo and Riccardo Fosco Gramaccioni and Alessandro Nicolosi and
-    Danilo Comminiello",
-    TITLE="Ship in Sight: Diffusion Models for {Ship-Image} Super Resolution",
-    BOOKTITLE="2024 International Joint Conference on Neural Networks (IJCNN) (IJCNN 2024)",
-    ADDRESS="Yokohama, Japan",
-    PAGES="7.98",
-    DAYS=28,
-    MONTH=jun,
-    YEAR=2024,
+@misc{sigillo2024ship,
+      title={Ship in Sight: Diffusion Models for Ship-Image Super Resolution}, 
+      author={Luigi Sigillo and Riccardo Fosco Gramaccioni and Alessandro Nicolosi and Danilo Comminiello},
+      year={2024},
+      eprint={2403.18370},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
 ```
 
