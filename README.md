@@ -1,4 +1,8 @@
-## Ship in sight
+# Ship in sight
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=luigisigillo/ShipinSight)
+
+Official PyTorch repository for Ship in Sight: Diffusion Models for Ship-Image Super Resolution, WCCI 2024.
+### Abstract :bookmark_tabs:
 In recent years, remarkable advancements have been achieved in the field of image generation, primarily driven by the escalating demand for high-quality outcomes across various image generation subtasks, such as inpainting, denoising, and super resolution. A major effort is devoted to exploring the application of super-resolution techniques to enhance the quality of low-resolution images. In this context, our method explores in depth the problem of ship image super resolution, which is crucial for coastal and port surveillance. 
 
 We investigate the opportunity given by the growing interest in text-to-image diffusion models, taking advantage of the prior knowledge that such foundation models have already learned. In particular, we present a diffusion-model-based architecture that leverages text conditioning during training while being class-aware, to best preserve the crucial details of the ships during the generation of the super-resoluted image. Since the specificity of this task and the scarcity availability of off-the-shelf data, we also introduce a large labeled ship dataset scraped from online ship images, mostly from [ShipSpotting](https://www.shipspotting.com/) website. 
@@ -12,7 +16,7 @@ Our method achieves more robust results than other deep learning models previous
 [Luigi Sigillo](https://luigisigillo.github.io/), [Riccardo Fosco Gramaccioni](https://scholar.google.it/citations?user=3nBFVm4AAAAJ&hl=it&oi=ao), [Alessandro Nicolosi](), [Danilo Comminiello](https://danilocomminiello.site.uniroma1.it/home)
 
 [ISPAMM Lab](https://ispamm.it/), Sapienza University of Rome 
-
+### Model Architecture :clapper:
 <img src="assets/network.jpg" width="800px"/>
 
 ### Update
@@ -27,7 +31,7 @@ Our method achieves more robust results than other deep learning models previous
 
 For more evaluation, please refer to our [paper](https://arxiv.org/abs/2403.18370) for details.
 
-### Dependencies and Installation
+### How to run experiments :computer:
 - Pytorch == 1.12.1
 - CUDA == 11.7
 - pytorch-lightning==1.4.2
@@ -103,9 +107,8 @@ Download the Dataset from [Google Drive]().
 
 
 
-### Citation
-If our work is useful for your research, please consider citing:
-
+### Cite
+Please cite our work if you found it useful:
 ```
 @misc{sigillo2024ship,
       title={Ship in Sight: Diffusion Models for Ship-Image Super Resolution}, 
