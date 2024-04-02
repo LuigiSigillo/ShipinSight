@@ -1,4 +1,4 @@
-# Ship in sight
+# Ship in Sight: Diffusion Models for Ship-Image Super Resolution
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=luigisigillo/ShipinSight)
 
 Official PyTorch repository for Ship in Sight: Diffusion Models for Ship-Image Super Resolution, WCCI 2024.
@@ -20,9 +20,9 @@ Our method achieves more robust results than other deep learning models previous
 <img src="assets/network.jpg" width="800px"/>
 
 ### Update
-- **2024.?.?**: Dataset is released.
-- **2024.?.?**: Checkpoints are released.
-- **2024.03.18**: Repo is released.
+- **?.04.2024**: Dataset is released.
+- **?.04.2024**: Checkpoints are released.
+- **18.03.2024**: Repo is released.
 
 
 ### Demo
@@ -73,7 +73,7 @@ python main.py --train --base configs/shipinsight/v2-finetune_text_T_512.yaml --
 
 #### Test directly
 
-Download the Diffusion and autoencoder pretrained models from [Google Drive]().
+Download the Diffusion and autoencoder pretrained models from [Google Drive](https://drive.google.com/drive/folders/1eElVRNGAOjFpGsEDIzjDTggAURWoMEIT?usp=drive_link).
 
 - Test on 128 512: You need at least 10G GPU memory to run this script (batchsize 2 by default)
 ```
@@ -95,15 +95,13 @@ python scripts/sr_val_ddpm_text_T_vqganfin_oldcanvas_tile.py --config configs/sh
 
 ### Dataset
 
-To construct such a dataset, a straightforward approach was scraping images from the web. The main source for our dataset is ShipSpotting, which serves as a repository for useruploaded images, hosting a vast collection of ship images, amounting to approximately 3 million. Furthermore, for each
-image, valuable supplementary information is available, such as the type of the ship, and present and past names.
-Next, we made sure that as many images as possible were collected in our dataset, since in deep learning, the quantity
-of training data directly influences the quality of results.
+To construct such a dataset, a straightforward approach was scraping images from the web. The main source for our dataset is ShipSpotting, which serves as a repository for user uploaded images, hosting a vast collection of ship images, amounting to approximately 3 million. Furthermore, for each image, valuable supplementary information is available, such as the type of the ship, and present and past names.
+Next, we made sure that as many images as possible were collected in our dataset, since in deep learning, the quantity of training data directly influences the quality of results.
 
-A larger volume of data enables models to generalize more effectively. Thus we scrape all the images and as a result,
-the dataset comprises a total of 1.517.702 samples. We exclude many classes of ships from our final analysis and concentrate on the more common and valuable for a real scenario use case. The total number of different classes is 20 and the ship categories included are Bulkers, Containerships, Cruise ships, Dredgers, Fire Fighting Vessels, Floating Sheerlegs, General Cargo, Inland, Livestock Carriers, Passenger Vessels, Patrol Forces, Reefers, Ro-ro, Supply ships, Tankers, Training ships, Tugs, Vehicle Carriers, Wood Chip Carriers. The total amount of samples after this class selection is 507.918.
 
-Download the Dataset from [Google Drive]().
+A larger volume of data enables models to generalize more effectively. Thus we scrape all the images and as a result, the dataset comprises a total of 1.517.702 samples. We exclude many classes of ships from our final analysis and concentrate on the more common and valuable for a real scenario use case. The total number of different classes is 20 and the ship categories included are Bulkers, Containerships, Cruise ships, Dredgers, Fire Fighting Vessels, Floating Sheerlegs, General Cargo, Inland, Livestock Carriers, Passenger Vessels, Patrol Forces, Reefers, Ro-ro, Supply ships, Tankers, Training ships, Tugs, Vehicle Carriers, Wood Chip Carriers. The total amount of samples after this class selection is 507.918.
+
+Download the Dataset from [Google Drive](https://drive.google.com/file/d/1Q6AxT07QptqSJ2BchjyoJfKwAzDwM_qD/view?usp=drive_link).
 
 
 
