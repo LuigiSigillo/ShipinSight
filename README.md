@@ -20,8 +20,8 @@ Our method achieves more robust results than other deep learning models previous
 <img src="assets/network.jpg" width="800px"/>
 
 ### Update
-- **?.04.2024**: Dataset is released.
-- **?.04.2024**: Checkpoints are released.
+- **08.04.2024**: Dataset is released.
+- **08.04.2024**: Checkpoints are released.
 - **18.03.2024**: Repo is released.
 
 
