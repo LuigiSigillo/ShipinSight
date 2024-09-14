@@ -10,7 +10,7 @@ We investigate the opportunity given by the growing interest in text-to-image di
 Our method achieves more robust results than other deep learning models previously employed for super resolution, as proven by the multiple experiments performed. Moreover, we investigate how this model can benefit downstream tasks, such as classification and object detection, thus emphasizing practical implementation in a real-world scenario. Experimental results show flexibility, reliability, and impressive performance of the proposed framework over state-of-the-art methods for different tasks.
 
 
-[Paper](https://arxiv.org/abs/2403.18370) | [Project Page]() | [Video]() | [WebUI]() |
+[Paper](https://arxiv.org/abs/2403.18370) | [IEEE Paper](https://ieeexplore.ieee.org/abstract/document/10650042) |
 
 
 [Luigi Sigillo](https://luigisigillo.github.io/), [Riccardo Fosco Gramaccioni](https://scholar.google.it/citations?user=3nBFVm4AAAAJ&hl=it&oi=ao), [Alessandro Nicolosi](), [Danilo Comminiello](https://danilocomminiello.site.uniroma1.it/home)
@@ -108,14 +108,16 @@ Download the Dataset from [Google Drive](https://drive.google.com/file/d/1Q6AxT0
 ### Cite
 Please cite our work if you found it useful:
 ```
-@misc{sigillo2024ship,
-      title={Ship in Sight: Diffusion Models for Ship-Image Super Resolution}, 
-      author={Luigi Sigillo and Riccardo Fosco Gramaccioni and Alessandro Nicolosi and Danilo Comminiello},
-      year={2024},
-      eprint={2403.18370},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
-}
+@INPROCEEDINGS{10650042,
+  author={Sigillo, Luigi and Gramaccioni, Riccardo Fosco and Nicolosi, Alessandro and Comminiello, Danilo},
+  booktitle={2024 International Joint Conference on Neural Networks (IJCNN)}, 
+  title={Ship in Sight: Diffusion Models for Ship-Image Super Resolution}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={1-8},
+  keywords={Training;Analytical models;Image synthesis;Surveillance;Superresolution;Text to image;Diffusion models;Generative Deep Learning;Image Super resolution;Diffusion Models;Ship Classification},
+  doi={10.1109/IJCNN60899.2024.10650042}}
 ```
 
 
