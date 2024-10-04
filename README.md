@@ -72,8 +72,7 @@ python main.py --train --base configs/shipinsight/v2-finetune_text_T_512.yaml --
 ```
 
 #### Test directly
-
-Download the Diffusion and autoencoder pretrained models from [Google Drive](https://drive.google.com/drive/folders/1eElVRNGAOjFpGsEDIzjDTggAURWoMEIT?usp=drive_link).
+Request access to the Diffusion and autoencoder pretrained models from [Google Drive](https://forms.gle/6wq9tSihCCViaYGz8).
 
 - Test on 128 512: You need at least 10G GPU memory to run this script (batchsize 2 by default)
 ```
@@ -101,7 +100,7 @@ Next, we made sure that as many images as possible were collected in our dataset
 
 A larger volume of data enables models to generalize more effectively. Thus we scrape all the images and as a result, the dataset comprises a total of 1.517.702 samples. We exclude many classes of ships from our final analysis and concentrate on the more common and valuable for a real scenario use case. The total number of different classes is 20 and the ship categories included are Bulkers, Containerships, Cruise ships, Dredgers, Fire Fighting Vessels, Floating Sheerlegs, General Cargo, Inland, Livestock Carriers, Passenger Vessels, Patrol Forces, Reefers, Ro-ro, Supply ships, Tankers, Training ships, Tugs, Vehicle Carriers, Wood Chip Carriers. The total amount of samples after this class selection is 507.918.
 
-Download the Dataset from [Google Drive](https://drive.google.com/file/d/1Q6AxT07QptqSJ2BchjyoJfKwAzDwM_qD/view?usp=drive_link).
+Request access to the Dataset from [Google Drive](https://forms.gle/6wq9tSihCCViaYGz8).
 
 
 
