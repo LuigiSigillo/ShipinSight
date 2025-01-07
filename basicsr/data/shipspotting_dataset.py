@@ -100,7 +100,7 @@ class ShipSpottingDataset(data.Dataset):
         # TODO: kernel range is now hard-coded, should be in the configure file
         self.pulse_tensor = torch.zeros(21, 21).float()  # convolving with pulse tensor brings no blurry effect
         self.pulse_tensor[10, 10] = 1
-        self.meta_info = get_all_csv_info_as_dict("/mnt/media/luigi/dataset/ShipSpotting/used")
+        self.meta_info = get_all_csv_info_as_dict(os.path.join("/".join(opt['gt_path'].split("/")[:-2]),"used"))
 
     def __getitem__(self, index):
         if self.file_client is None:

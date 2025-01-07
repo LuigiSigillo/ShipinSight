@@ -19,7 +19,7 @@ model:
     scale_factor: 0.18215
     use_ema: False
     # for training only
-    ckpt_path: /mnt/media/luigi/HDD_Documents/StableSR/checkpoints/v2-1_512-ema-pruned.ckpt
+    ckpt_path: /mnt/media/HDD_4TB/luigi/HDD_Documents/ShipinSight/checkpoints/v2-1_512-ema-pruned.ckpt
     unfrozen_diff: False
     random_size: False
     time_replace: 1000
@@ -86,7 +86,7 @@ model:
         in_channels: 3 #1280 for features
         num_classes: 20
         pretrained: True
-        ckpt_path: /mnt/media/luigi/HDD_Documents/StableSR/checkpoints/ship_res_whole_image_classifier_ep4.pt
+        ckpt_path: /mnt/media/HDD_4TB/luigi/HDD_Documents/ShipinSight/checkpoints/ship_res_whole_image_classifier_ep4.pt
     ship_embedder_config:
       target: ldm.ship_classifier.EmbedFC
       params:
@@ -151,7 +151,7 @@ data:
       params:
         queue_size: 180
         # gt_path: ['/mnt/lustre/share/jywang/dataset/DIV8K/train_HR/', '/mnt/lustre/share/jywang/dataset/df2k_ost/GT/']
-        gt_path: /mnt/media/luigi/dataset/ShipSpotting/shipspotting_64_512/train
+        gt_path: /mnt/media/HDD_4TB/luigi/dataset/ShipSpotting/shipspotting_64_512/train
         # face_gt_path: '/mnt/lustre/share/jywang/dataset/FFHQ/1024/'
         # num_face: 10000
         crop_size: 512
@@ -185,7 +185,7 @@ data:
 
       params:
         # gt_path: /mnt/lustre/share/jywang/dataset/ImageSR/DIV2K/DIV2K_train_HR/
-        gt_path: /mnt/media/luigi/dataset/ShipSpotting/shipspotting_64_512/validation
+        gt_path: /mnt/media/HDD_4TB/luigi/dataset/ShipSpotting/shipspotting_64_512/validation
         crop_size: 512
         io_backend:
           type: disk
@@ -222,7 +222,7 @@ data:
 #       target: basicsr.data.realesrgan_dataset.RealESRGANDataset
 #       params:
 #         # gt_path: /mnt/lustre/share/jywang/dataset/ImageSR/DIV2K/DIV2K_train_HR/
-#         gt_path: /mnt/media/luigi/dataset/ShipSpotting/not_used
+#         gt_path: /mnt/media/HDD_4TB/luigidataset/ShipSpotting/not_used
 #         crop_size: 512
 #         io_backend:
 #           type: disk
